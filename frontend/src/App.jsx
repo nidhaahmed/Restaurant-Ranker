@@ -9,6 +9,7 @@ const App = () => {
     const [restaurants, setRestaurants] = useState([]);
     const [analytics, setAnalytics] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
     const [weights, setWeights] = useState({
         rating: 0.40,
         reliability: 0.25,
@@ -19,6 +20,7 @@ const App = () => {
 
     const fetchRankings = async () => {
         setLoading(true);
+        setError(null);
         try {
             // Use environment variable in production, fallback to localhost for development
             const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
@@ -27,6 +29,7 @@ const App = () => {
             setAnalytics(response.data.analytics);
         } catch (err) {
             console.error("Error fetching rankings:", err);
+            setError("Could not reach the ranking engine. Please ensure the Backend is running and VITE_API_URL is set correctly in Vercel.");
         } finally {
             setLoading(false);
         }
@@ -114,6 +117,17 @@ const App = () => {
                             {loading ? (
                                 <div className="h-64 flex items-center justify-center text-slate-500 animate-pulse font-mono tracking-widest text-xs">
                                     RECOMPUTING MARKETPLACE VECTORS...
+                                </div>
+                            ) : error ? (
+                                <div className="h-64 flex flex-col items-center justify-center text-danger glass-card border-danger/20 p-8 text-center space-y-4">
+                                    <AlertTriangle className="w-12 h-12" />
+                                    <p className="font-medium">{error}</p>
+                                    <button
+                                        onClick={fetchRankings}
+                                        className="px-4 py-2 bg-danger/10 hover:bg-danger/20 rounded-lg text-sm transition-colors"
+                                    >
+                                        Retry Connection
+                                    </button>
                                 </div>
                             ) : (
                                 restaurants.map((restaurant, index) => (
