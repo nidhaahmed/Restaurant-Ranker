@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import StrategyDashboard from './components/StrategyDashboard';
 import RestaurantCard from './components/RestaurantCard';
-import { LayoutDashboard, Zap, PieChart, Users, Github, Linkedin, ExternalLink, BookOpen } from 'lucide-react';
+import { LayoutDashboard, Zap, PieChart, Users, Github, Linkedin, ExternalLink, BookOpen, AlertTriangle } from 'lucide-react';
 import { AnimatePresence } from 'framer-motion';
 
 const App = () => {
