@@ -22,8 +22,10 @@ const App = () => {
         setLoading(true);
         setError(null);
         try {
-            // Use environment variable in production, fallback to localhost for development
-            const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+            // Sanitize URL: remove trailing slash if user added it in Vercel settings
+            let API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+            API_BASE_URL = API_BASE_URL.replace(/\/$/, '');
+
             const response = await axios.post(`${API_BASE_URL}/api/restaurants/rank`, { weights });
             setRestaurants(response.data.data);
             setAnalytics(response.data.analytics);
