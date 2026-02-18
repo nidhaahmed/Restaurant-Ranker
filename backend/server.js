@@ -1,0 +1,22 @@
+const express = require('express');
+const cors = require('cors');
+require('dotenv').config();
+
+const app = express();
+const PORT = process.env.PORT || 5000;
+
+app.use(cors());
+app.use(express.json());
+
+// Basic Heartbeat
+app.get('/api/health', (req, res) => {
+    res.json({ status: 'Ranking Engine is online', timestamp: new Date() });
+});
+
+// Routes
+const restaurantRoutes = require('./routes/restaurants');
+app.use('/api/restaurants', restaurantRoutes);
+
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
