@@ -18,7 +18,7 @@ const StrategyDashboard = ({ weights, setWeights, onSimulate }) => {
     ];
 
     return (
-        <aside className="w-80 glass-card p-6 h-[calc(100vh-2rem)] sticky top-4">
+        <aside className="w-full lg:w-80 glass-card p-6 lg:h-[calc(100vh-4rem)] lg:sticky lg:top-8 mb-4 lg:mb-0 order-2 lg:order-1">
             <div className="flex items-center gap-2 mb-8">
                 <Sliders className="text-brand-accent w-5 h-5" />
                 <h2 className="text-xl font-bold">Strategy Console</h2>

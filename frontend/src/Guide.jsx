@@ -40,7 +40,7 @@ const Guide = () => {
                         <Layers className="w-6 h-6 text-brand-accent" />
                         2. The Science of the Score
                     </h2>
-                    <div className="grid md:grid-cols-2 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div className="glass-card p-6 space-y-4">
                             <h3 className="font-bold text-brand-accent uppercase text-xs tracking-widest">Bayesian Adjusted Rating</h3>
                             <p className="text-sm text-slate-400">
@@ -63,29 +63,29 @@ const Guide = () => {
                         <Database className="w-6 h-6 text-brand-accent" />
                         3. System Architecture
                     </h2>
-                    <div className="glass-card p-10 bg-slate-950 flex flex-col items-center">
+                    <div className="glass-card p-6 md:p-10 bg-slate-950 flex flex-col items-center overflow-hidden">
                         {/* A "Text-Based" Diagram / SVG */}
-                        <div className="flex flex-col items-center gap-8 w-full">
-                            <div className="border-2 border-brand-accent px-6 py-3 rounded-lg bg-brand-accent/10">
-                                <span className="font-bold">Frontend: React + Vite</span>
-                                <div className="text-[10px] text-slate-500 font-mono mt-1">Framer Motion | Tailwind v4</div>
+                        <div className="flex flex-col items-center gap-4 md:gap-8 w-full">
+                            <div className="border-2 border-brand-accent px-4 md:px-6 py-2 md:py-3 rounded-lg bg-brand-accent/10 whitespace-nowrap">
+                                <span className="font-bold text-sm md:text-base">Frontend: React + Vite</span>
+                                <div className="text-[8px] md:text-[10px] text-slate-500 font-mono mt-1">Framer Motion | Tailwind v4</div>
                             </div>
-                            <div className="h-8 w-0.5 bg-slate-700"></div>
-                            <div className="border-2 border-slate-500 px-6 py-3 rounded-lg bg-slate-800">
-                                <span className="font-bold">REST API Gateway (Express.js)</span>
+                            <div className="h-4 md:h-8 w-0.5 bg-slate-700"></div>
+                            <div className="border-2 border-slate-500 px-4 md:px-6 py-2 md:py-3 rounded-lg bg-slate-800 whitespace-nowrap">
+                                <span className="font-bold text-sm md:text-base">REST API Gateway (Express.js)</span>
                             </div>
-                            <div className="h-8 w-0.5 bg-slate-700"></div>
-                            <div className="border-2 border-yellow-500 px-6 py-3 rounded-lg bg-yellow-500/10">
-                                <span className="font-bold">Ranking Engine Service</span>
-                                <div className="text-[10px] text-slate-500 font-mono mt-1">Normalization Logic | Bayesian Vectorization</div>
+                            <div className="h-4 md:h-8 w-0.5 bg-slate-700"></div>
+                            <div className="border-2 border-yellow-500 px-4 md:px-6 py-2 md:py-3 rounded-lg bg-yellow-500/10 text-center">
+                                <span className="font-bold text-sm md:text-base">Ranking Engine Service</span>
+                                <div className="text-[8px] md:text-[10px] text-slate-500 font-mono mt-1">Normalization Logic | Bayesian Vectorization</div>
                             </div>
-                            <div className="h-8 w-0.5 bg-slate-700"></div>
-                            <div className="flex gap-12">
-                                <div className="border-2 border-slate-700 px-6 py-3 rounded-lg bg-slate-900 border-dashed">
-                                    <span className="font-bold opacity-50">PostgreSQL</span>
+                            <div className="h-4 md:h-8 w-0.5 bg-slate-700"></div>
+                            <div className="flex flex-col md:flex-row gap-4 md:gap-12 w-full justify-center items-center">
+                                <div className="border-2 border-slate-700 px-4 md:px-6 py-2 md:py-3 rounded-lg bg-slate-900 border-dashed whitespace-nowrap w-full md:w-auto text-center">
+                                    <span className="font-bold opacity-50 text-sm md:text-base">PostgreSQL</span>
                                 </div>
-                                <div className="border-2 border-success px-6 py-3 rounded-lg bg-success/10">
-                                    <span className="font-bold">Mock Resiliency Layer</span>
+                                <div className="border-2 border-success px-4 md:px-6 py-2 md:py-3 rounded-lg bg-success/10 whitespace-nowrap w-full md:w-auto text-center">
+                                    <span className="font-bold text-sm md:text-base">Mock Resiliency Layer</span>
                                 </div>
                             </div>
                         </div>

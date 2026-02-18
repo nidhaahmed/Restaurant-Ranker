@@ -42,9 +42,9 @@ const App = () => {
     }, []);
 
     return (
-        <div className="min-h-screen p-4 md:p-8 flex flex-col md:flex-row gap-8 relative">
-            {/* Top Right Actions */}
-            <div className="fixed top-6 right-8 z-40 flex items-center gap-3">
+        <div className="min-h-screen p-4 md:p-8 flex flex-col lg:flex-row gap-8 relative">
+            {/* Top Right Actions - Move to absolute/static on mobile to avoid overlap */}
+            <div className="absolute top-4 right-4 md:fixed md:top-6 md:right-8 z-40 flex flex-col sm:flex-row items-end sm:items-center gap-3">
                 <a
                     href="/guide"
                     target="_blank"
@@ -76,7 +76,7 @@ const App = () => {
             <main className="flex-1 flex flex-col min-h-full">
                 <div className="flex-1 space-y-8">
                     {/* Header & Stats */}
-                    <header className="flex flex-col md:flex-row md:items-end justify-between gap-6 mr-80">
+                    <header className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 lg:mr-80">
                         <div>
                             <div className="flex items-center gap-2 text-brand-accent mb-2">
                                 <Zap className="w-4 h-4" />
@@ -105,11 +105,11 @@ const App = () => {
 
                     {/* List View */}
                     <div className="space-y-4">
-                        <div className="flex items-center justify-between text-slate-500 text-sm px-4">
+                        <div className="hidden sm:flex items-center justify-between text-slate-500 text-sm px-4">
                             <div className="flex gap-4">
                                 <span>Position & Restaurant</span>
                             </div>
-                            <div className="flex gap-16 mr-8">
+                            <div className="flex gap-8 lg:gap-16 lg:mr-8">
                                 <span>Performance Breakdown</span>
                                 <span>Final Score</span>
                             </div>
